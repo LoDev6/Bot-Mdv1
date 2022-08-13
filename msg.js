@@ -1604,15 +1604,15 @@ case 'attp': case 'ttp': {
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                     ngen = `
-➣ Title : ${anu.title}
-➣ Ext : Search
-➣ ID : ${anu.videoId}
-➣ Duration : ${anu.timestamp}
-➣ Viewers : ${anu.views}
-➣ Uploaded : ${anu.ago}
-➣ Author : ${anu.author.name}
-➣ Channel : ${anu.author.url}
-➣ Description : ${anu.description}
+🍜 Title : ${anu.title}
+😁 Ext : Search
+📃 ID : ${anu.videoId}
+📚 Duration : ${anu.timestamp}
+🎥 Viewers : ${anu.views}
+📈 Uploaded : ${anu.ago}
+😅 Author : ${anu.author.name}
+🥀 Channel : ${anu.author.url}
+📃 Description : ${anu.description}
 `
 message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   Zaki.waUploadToServer })
                 template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -1620,19 +1620,19 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                         hydratedTemplate: {
                             imageMessage: message.imageMessage,
                             hydratedContentText: ngen,
-                            hydratedFooterText: `Playing To ${text}`,
+                            hydratedFooterText: `Now playing ${text}`,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Video Source',
+                                    displayText: '📺 Go to YouTube !',
                                     url: `${anu.url}`
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '🎵Audio🎵',
+                                    displayText: 'Audio',
                                     id: `ytmp3 ${anu.url} 320kbps`
                                     }
                                 },{quickReplyButton: {
-                                    displayText: '🎥VIdeo🎥',
+                                    displayText: 'Video',
                                     id: `ytmp4 ${anu.url} 360p`
                                 }
                             }]
