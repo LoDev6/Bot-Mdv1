@@ -808,10 +808,13 @@ case 'donasi' : case 'sewa' : {
 txtproj = `Hi Kack ${pushname} 
 
 Donasi :
-• donasi 15rb = 1 minggu
-• donasi 10rb = unlimited 😱
-• donasi 5rb = 1 bulan
-• donasi 100rb = 10 bulan
+• donasi 15K = 1 minggu
+• donasi 10K = unlimited 😱
+• donasi 5K = 4 day
+• donasi 20K
+• donasi 100K = 10 bulan
+
+081238066104 ( Telkomsel )
 
 *Terima kasih atas donasi anda*
 
@@ -832,7 +835,7 @@ Donasi :
                                     id: 'ping'
                             	}
                             }]
-                            	Zaki.send5ButImg(I, txtproj, `I Hate You😡😡`, global.lol, btn)
+                            	Zaki.send5ButImg(I, txtproj, `global.gud`, global.lol, btn)
                             }
       break
             case 'join': {
@@ -1852,19 +1855,25 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return reply(anu.message)
-                Zaki.sendText(m.chat, `➣ *Results :* ${anu.message}`, m)
+                Zaki.sendText(m.chat, `> *Results :* ${anu.message}`, m)
             }
             break
-	        case 'tiktok': case 'tiktokdl': case 'tt': {
-                if (!q) throw 'Enter Query Link!'
-                reply(mess.wait)
-xfar.Tiktok(q).then( data => {
-  Zaki.sendMessage(m.chat, {
- video: { url: data.medias[0].url }, caption: `${data.title}\n\nKamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya!`,
- buttons: [{buttonId: `${prefix}tiktoknowm ${args[0]} ${m.sender}`, buttonText: { displayText: "No Watermark" }, type: 1 }, {buttonId: `${prefix}tiktokaudio ${args[0]} ${m.sender}`, buttonText: { displayText: "Audio" }, type: 1 }],
- footer: "Pilih Sesuai Keinginan"
-  }, { quoted: m })
-})
+	        case 'tiktok': case 'tiktoknowm': {
+                if (!text) throw 'Enter Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: 'With Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: 'Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.nowatermark },
+                    caption: `⬣━━━⬡\n\n>*caption: ${text}*\n\n⬣━━━━⬡`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                Zaki.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'tiktoknowm': case 'tiktokvideo': {
@@ -1889,7 +1898,7 @@ case 'mediafire':
 			kueri = args[0]
 			get_result = await fetchJson(`https://api.lolhuman.xyz/api/mediafire?apikey=woaibeijingtiananmen&url=${kueri}`)
 			get_result = get_result.result
-			ini_txt = `『 🐕 *MEDIAFIRE DOWNLOAD* 🐕 』\n\n`
+			ini_txt = `『 *MEDIAFIRE DOWNLOAD* 』\n\n`
 			ini_txt += `> Name File : ${get_result.filename}\n`
 			ini_txt += `> Type : ${get_result.filetype}\n`
 			ini_txt += `> Size : ${get_result.filesize}\n`
@@ -1904,7 +1913,7 @@ case 'zippyshare': case 'zippydl':
 			kueri = args[0]
 			get_result = await fetchJson(`https://api.lolhuman.xyz/api/zippyshare?apikey=woaibeijingtiananmen&url=${kueri}`)
 			get_result = get_result.result
-			ini_txt = `『 🐕 *ZIPPYSHARE DOWNLOAD* 🐕 』\n\n`
+			ini_txt = `『 *ZIPPYSHARE DOWNLOAD* 』\n\n`
 			ini_txt += `> Name File : ${get_result.name_file}\n`
 			ini_txt += `> Size : ${get_result.size}\n`
 			ini_txt += `> Date Upload : ${get_result.date_upload}\n`
@@ -2354,48 +2363,7 @@ Zaki.sendMessage(m.chat, { contacts: { displayName: 'Elaina😁👍', contacts: 
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
-                    break 
-case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'anj': case 'doge':{
-                anu = `Hi ${pushname} Lmao`
-const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: anu,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./media/image/lol.jpg')},
-                            hydratedFooterText: `Dont Be Killed🗿`,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: 'Go To owner !',
-                                    url: 'https://wa.me/79303894386'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Menu',
-                                    id: `${prefix}menu`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: 'Command',
-                                    id: `${prefix}allmenu`
-                                }
-                                }]
-                        }
-                    }
-                }), { userJid: m.chat })
-                Zaki.relayMessage(m.chat, template.message, { messageId: template.key.id })
-                }
-break
-             case 'sendbuffer':{
-try{
- await m.reply('Tunggu sebentar...')
-sendFile(m.chat, isUrl(q)[0], mess.done)
-} catch (err){
- m.reply(err)
-console.log(err)
-}
-}
-break
+                    break
 case 'menu': {
 	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
