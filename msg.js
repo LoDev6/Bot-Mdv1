@@ -112,15 +112,6 @@ var ucapanWaktu = 'Goof Morning 🌅'
 if(time2 < "05:00:00"){
 var ucapanWaktu = 'Good Night 🌃'
                                          }
-	
-//Fake Reply Group
-	const reply = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://chat.whatsapp.com/LOFP3FG0SUL3S9FcXxHyYW"}}}, { quoted: m})
-        }
-        
-        const reply1 = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Well I hate you`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://chat.whatsapp.com/LOFP3FG0SUL3S9FcXxHyYW"}}}, { quoted: m})
-        }
 try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
             let limitUser = isPremium ? global.limitawal.premium : global.limitawal.free
@@ -2475,23 +2466,15 @@ case 'menu': {
                             }]
                             let link = `https://m.youtube.com/watch?v=-OCphNwJEc0`
   let templateMessage = {
-  document:fs.readFileSync('./lib/lmao.docx'),
+  document: fs.readFileSync('./lib/lmao.docx'),
   fileName: global.fake,
   mimetype: lol,
   fileLength: 1245567891008252826281638637,
   jpegThumbnail: global.lol,
-  caption: `${anu}`,
+  caption: anu,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: btn,
-  headerType: 4,
-  contextInfo:{externalAdReply:{ 
-  title: `Hi 😁👍 ${pushname} How Are You?`,
-  body: `I am DailyDev`,
-  mediaType:2,
-  thumbnail: global.lol,
-  sourceUrl: link,
-  mediaUrl: link,
-  }}}
+  }
                             	Zaki.sendMessage(m.chat, templateMessage)
 }
 break  
