@@ -2474,7 +2474,7 @@ case 'menu': {
                             	}
                             }]
   let templateMessage = {
-  document: fs.readFileSync('./lib/docs.docx'),
+  document:fs.readFileSync('./lib/lmao.docx'),
   fileName: global.fake,
   mimetype: lol,
   fileLength: 1245567891008252826281638637,
