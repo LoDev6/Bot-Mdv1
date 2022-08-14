@@ -1847,7 +1847,18 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
             Zaki.sendMessage(m.chat, { audio: { url: data.nowm }, mimetype: 'audio/mp4' }, { quoted: m })
             })
 	        break
-
+case 'googledrive': {
+if (!text) throw '*Enter a Link Query!*'
+if (!isUrl(args[0]) && !args[0].includes('googledrive.com')) throw '*The link you provided is not valid*'
+if (!isInventoryLimit){ addInventoriLimit(m.sender) }
+            if (isLimit < 1) return m.reply(mess.endLimit)
+            kurangLimit(m.sender, 1)
+            m.reply(`*1 limit used*`)
+anu = await fetchJson(`https://xteam.xyz/dl/drive?url=${text}&APIKEY=${setting.riy}`)
+m.reply(`${util.format(anu)}`)
+Zaki.sendMessage(m.chat, {document: await getBuffer(anu.result.server2), mimetype: 'application/zip', fileName: `${anu.result.title}`}, {quoted:m}).catch ((err) => m.reply('*Failed to download File*'))     
+}
+break
 case 'mediafire': 
 				if (args.length == 0) throw (`Usage: ${prefix + command} link`)
                 m.reply(mess.wait) 
@@ -2323,35 +2334,6 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-case 'thankfor': {
-	ty = `Kizakixd ( My Creators )
-LolDev ( Recode )
-Kimijasu ( Perusak Sc😁😡 )
-Me ( Fixed Bug )`
-let btnn = [{
-	 urlButton: {
-		displayText: 'My favorite',
-		url : 'Kikuk😁'
-		}
-           }, {
-			quickReplyButton: {
-                      displayText: 'Back In menu',
-                       id: 'menu'
-				}
-			}]
-			let templateMessage = {
-				document: global.lol,
-  		fileName: global.fake,
-  		mimetype: 'document/docx',
-  		fileLength: 1245567891008252826281638637,
- 		 jpegThumbnail: global.lol,
-  		caption: `${ty}`,
- 		 footer: 'Elaina bot || 2022 ❤️',
-  		templateButtons: btnn
-  }
-                            	Zaki.sendMessage(m.chat, always)
-}
-break
 case 'menu': {
 	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
@@ -2425,6 +2407,7 @@ case 'menu': {
 │✘ ${prefix}play
 │✘ ${prefix}ytmp3
 │✘ ${prefix}mediafire
+│✘ ${prefix}googledrive
 │✘ ${prefix}zippyshare 
 │✘ ${prefix}getmusic
 │✘ ${prefix}getvideo
@@ -2491,15 +2474,22 @@ case 'menu': {
                             	}
                             }]
   let templateMessage = {
-  document: global.lol,
+  document: fs.readFileSync('.lib/docs.docx'),
   fileName: global.fake,
-  mimetype: 'application/zip',
+  mimetype: lol,
   fileLength: 1245567891008252826281638637,
   jpegThumbnail: global.lol,
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
-  templateButtons: btn
-  }
+  templateButtons: btn,
+contextInfo:{externalAdReply:{ 
+title: `Hi 😁👍 ${pushname} How Are You?`,
+body: `I am DailyDev`,
+mediaType:2,
+thumbnail: global.lol,
+sourceUrl: 'https://m.youtube.com/watch?v=-OCphNwJEc0',
+mediaUrl: 'https://m.youtube.com/watch?v=-OCphNwJEc0',
+  }}}
                             	Zaki.sendMessage(m.chat, templateMessage)
 }
 break  
