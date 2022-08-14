@@ -2482,13 +2482,14 @@ case 'menu': {
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: btn,
-contextInfo:{externalAdReply:{ 
-title: `Hi 😁👍 ${pushname} How Are You?`,
-body: `I am DailyDev`,
-mediaType:2,
-thumbnail: global.lol,
-sourceUrl: 'https://m.youtube.com/watch?v=-OCphNwJEc0',
-mediaUrl: 'https://m.youtube.com/watch?v=-OCphNwJEc0',
+  headerType: 4,
+  contextInfo:{externalAdReply:{ 
+  title: `Hi 😁👍 ${pushname} How Are You?`,
+  body: `I am DailyDev`,
+  mediaType:2,
+  thumbnail: global.lol,
+  sourceUrl: lmao,
+  mediaUrl: lmao,
   }}}
                             	Zaki.sendMessage(m.chat, templateMessage)
 }
