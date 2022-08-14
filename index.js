@@ -80,15 +80,15 @@ Kon = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${encodeURICom
 
 Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/3983c55ac7f3ebea225d3.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
-                    Zaki.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `Hi Welcome To  ${metadata.subject} @${num.split("@")[0]}
+                    Zaki.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}
 
 Description: ${metadata.desc}
 
-Hi 👋 @${num.split("@")[0]}`} )
+Welcome 👋`} )
                 } else if (anu.action == 'remove') {
                     Zaki.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Left ${metadata.subject}
 
-Good Bye Gausah Balik lagi anj Mending lu Mati aja Sono wkwkw` })
+Good Bye 👋` })
                 }
             }
         } catch (err) {

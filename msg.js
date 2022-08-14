@@ -1822,7 +1822,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
 	        case 'tiktok': {
             if (!text) throw 'Enter Your Query Link!'
             m.reply(mess.wait)
-            com.ttdownloader(q).then( data => {
+            hx.ttdownloader(q).then( data => {
             Zaki.sendMessage(m.chat, {
             video: { url: data.wm },
             caption: `Kamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya`,
