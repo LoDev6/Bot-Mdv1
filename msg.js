@@ -95,22 +95,22 @@ return dDisplay + hDisplay + mDisplay + sDisplay;
       //ucapan Waktu ( FuxkDev )
 const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
-var ucapanWaktu = 'Selamat Pagi'
+var ucapanWaktu = 'Good Morning 🌅'
                                         }
 if(time2 < "19:00:00"){
-var ucapanWaktu = 'Selamat Sore'
+var ucapanWaktu = 'Good Afternoon 🌆'
                                          }
 if(time2 < "18:00:00"){
-var ucapanWaktu = 'Selamat Sore'
+var ucapanWaktu = 'Good Afternoon 🌆'
                                          }
 if(time2 < "15:00:00"){
-var ucapanWaktu = 'Selamat Siang'
+var ucapanWaktu = 'Good Day ☀️'
                                          }
 if(time2 < "11:00:00"){
-var ucapanWaktu = 'Selamat Pagi'
+var ucapanWaktu = 'Goof Morning 🌅'
                                          }
 if(time2 < "05:00:00"){
-var ucapanWaktu = 'Selamat Malam'
+var ucapanWaktu = 'Good Night 🌃'
                                          }
 	
 //Fake Reply Group
@@ -804,40 +804,6 @@ Ciee Whats Going On💖👀`
                     await Zaki.sendButtonText(m.chat, buttons, jawab, Zaki.user.name, m, {mentions: menst})
             }
             break
-case 'donasi' : case 'sewa' : {
-txtproj = `Hi Kack ${pushname} 
-
-Donasi :
-• donasi 15K = 1 minggu
-• donasi 10K = unlimited 😱
-• donasi 5K = 4 day
-• donasi 20K
-• donasi 100K = 10 bulan
-
-081238066104 ( Telkomsel )
-
-*Terima kasih atas donasi anda*
-
-           『 THANKS YOU ! 』`
-     let btn = [{
-     	urlButton: {
-                       displayText: 'Source and Website',
-                       url: 'https://github.com/DikaArdnt/Hisoka-Morou'
-                                }
-                            }, {
-                            	quickReplyButton: {
-                                    displayText: '🍱Menu',
-                                    id: 'Menu'
-                 				}
-                            }, {
-                            	quickReplyButton: {
-                                    displayText: 'Runtime',
-                                    id: 'ping'
-                            	}
-                            }]
-                            	Zaki.send5ButImg(I, txtproj, `global.gud`, global.lol, btn)
-                            }
-      break
             case 'join': {
                 if (!isCreator) throw mess.owner
                 if (!text) throw 'Enter the group link!'
@@ -1699,11 +1665,6 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 Zaki.sendMessage(m.chat, { image: { url: result }, caption: '➣ Media Url : '+result }, { quoted: m })
             }
             break
-            case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
-                reply(mess.wait)
-                Zaki.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/anime/'+command, 'apikey') }, caption: `Download From ${text}` }, { quoted: m})
-            }
-            break
 	    case 'couplepp': case 'ppcouple': {
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -1858,40 +1819,35 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 Zaki.sendText(m.chat, `> *Results :* ${anu.message}`, m)
             }
             break
-	        case 'tiktok': case 'tiktoknowm': {
-                if (!text) throw 'Enter Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: 'With Watermark'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: 'Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.nowatermark },
-                    caption: `⬣━━━⬡\n\n>*caption: ${text}*\n\n⬣━━━━⬡`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                Zaki.sendMessage(m.chat, buttonMessage, { quoted: m })
+	        case 'tiktok': {
+            if (!text) throw 'Enter Your Query Link!'
+            m.reply(mess.wait)
+            hx.ttdownloader(q).then( data => {
+            Zaki.sendMessage(m.chat, {
+            video: { url: data.wm },
+            caption: `Kamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya`,
+            buttons: [{buttonId: `${prefix}ttnowm ${args[0]} ${m.sender}`, buttonText: { displayText: "Tiktok Nowm" }, type: 1 }],
+            footer: "Untuk Mengubah Ke Audio Gunakan Manual #tiktokaudio [link]"
+            }, { quoted: m })
+            })
             }
             break
-            case 'tiktoknowm': case 'tiktokvideo': {
-                if (!q) throw 'Enter Query Link!'
-                reply(mess.wait)
-hx.ttdownloader(q).then( data => {
-  Zaki.sendMessage(m.chat, { video: { url: data.nowm }}, { quoted: m })
-})
-            }
-            break
-            case 'tiktokmp3': case 'tiktokaudio': {
-                if (!text) throw 'Enter Query Link!'
-                reply(mess.wait)
-xfar.Tiktok(q).then( data => {
-  Zaki.sendMessage(m.chat, { audio: { url: data.medias[2].url }, mimetype: 'audio/mp4' }, { quoted: m })
-})
-            }
-            break
+            case 'ttnowm':
+            if (!text) throw 'Masukkan Query Link!'
+            m.reply(mess.wait)
+            hx.ttdownloader(q).then( data => {
+            Zaki.sendMessage(m.chat, { video: { url: data.nowm }, mimetype: 'video/mp4' }, { quoted: m })
+            })
+	        break
+
+            case 'ttaudio':
+            if (!text) throw 'Masukkan Query Link!'
+            m.reply(mess.wait)
+            hx.ttdownloader(q).then( data => {
+            Zaki.sendMessage(m.chat, { audio: { url: data.nowm }, mimetype: 'audio/mp4' }, { quoted: m })
+            })
+	        break
+
 case 'mediafire': 
 				if (args.length == 0) throw (`Usage: ${prefix + command} link`)
                 m.reply(mess.wait) 
@@ -1949,6 +1905,10 @@ case 'zippyshare': case 'zippydl':
                 Zaki.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
+case 'donasi' : case 'sewa' : {
+m.reply('Donasi Me : +62 812-3806-6104 ( TELKOMSEL )\n\nDonasi In:Dana\n\nThanks For Donasi:)')
+}
+break
             case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Enter Query Link!'
                 reply(mess.wait)
@@ -2323,8 +2283,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 case 'husbu':
                 case 'shinobu':
                 let buttonas = [
-                    {buttonId: `${command}`, buttonText: {displayText: '🐕Next'}, type: 1},
-                    {buttonId: `${allmenu}`, buttonText: {displayText: 'Back To Menu🥶☝️'}, type: 2},
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next'}, type: 1},
                 ]
                 let buttonMesasage = {
                     image: { url: `http://api.lolhuman.xyz/api/random/${command}?apikey=woaibeijingtiananmen` },
@@ -2333,7 +2292,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     buttons: buttonas,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMesasage, { quoted: m })
+                Zaki.sendMessage(m.chat, buttonMesasage, { quoted: m })
 				
             
 			break
@@ -2364,6 +2323,35 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
+case 'thankfor': {
+	ty = `Kizakixd ( My Creators )
+LolDev ( Recode )
+Kimijasu ( Perusak Sc😁😡 )
+Me ( Fixed Bug )`
+let btnn = [{
+	 urlButton: {
+		displayText: 'My favorite',
+		url : 'Kikuk😁'
+		}
+           }, {
+			quickReplyButton: {
+                      displayText: 'Back In menu',
+                       id: 'menu'
+				}
+			}]
+			let templateMessage = {
+				document: global.lol,
+  		fileName: global.fake,
+  		mimetype: 'document/docx',
+  		fileLength: 1245567891008252826281638637,
+ 		 jpegThumbnail: global.lol,
+  		caption: `${ty}`,
+ 		 footer: 'Elaina bot || 2022 ❤️',
+  		templateButtons: btnn
+  }
+                            	Zaki.sendMessage(m.chat, always)
+}
+break
 case 'menu': {
 	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
@@ -2393,7 +2381,7 @@ case 'menu': {
                                 }
                             }]
                             kahfsj = fs.readFileSync('./media/image/jpg.jpg')
-                        Zaki.send5ButImg(m.chat, txt, "© 2022 || Call Me Daily", kahfsj, btn, kahfsj)
+                        Zaki.send5ButImg(m.chat, txt, "© 2022 || Elaina bot", kahfsj, btn, kahfsj)
                      }
                      break
            case 'allmenu': case 'listmenu': case 'help': case '?': {
@@ -2402,6 +2390,7 @@ case 'menu': {
 ╔═══❒ 📚 *INFO*
 ╟> 🍁Name Owner : ${ownername}
 ╟> 📃Script Using : Multi Device ( Beta ) Whatsapp
+╟> 🏜️Today : ${ucapanWaktu}
 ╟> 🤴Creator : PfftDev 
 ╟> 🧐BotName : ${gud}
 ╟> ⏱️Time : ${time2}
@@ -2412,7 +2401,7 @@ case 'menu': {
 ╟> 👨‍💻Prefix : ( ${prefix} )
 ╚══════
 
-❒──✜✡ 『 *List Group* 』✵✡──────
+❒──✜✤ 『 *List Group* 』✵✮────
 │✘ ${prefix}grouplink
 │✘  ${prefix}ephemeral [option]
 │✘  ${prefix}setgrouppp
@@ -2427,10 +2416,11 @@ case 'menu': {
 │✘  ${prefix}demote @user
 ❒───────✤✵
 
-❒──✜✡ 『 *List Downloaded* 』✵✡──────
-│✘ ${prefix}tiktokmp3
-│✘ ${prefix}instagram
+❒──✜✬『 *List Downloaded* 』✵✧────
 │✘ ${prefix}tiktok
+│✘ ${prefix}instagram
+│✘ ${prefix}ttnowm
+│✘ ${prefix}ttaudio
 │✘ ${prefix}ytmp4
 │✘ ${prefix}play
 │✘ ${prefix}ytmp3
@@ -2440,7 +2430,7 @@ case 'menu': {
 │✘ ${prefix}getvideo
 ❒───────✤✵
 
-❒──✜✡ 『 *List Random* 』✵✡──────
+❒──✜❖ 『 *List Random* 』✵☆────
 │✘ ${prefix}couplepp
 │✘ ${prefix}coffee
 │✘ ${prefix}shinobu
@@ -2450,7 +2440,7 @@ case 'menu': {
 │✘ ${prefix}bts
 ❒───────✤✵
 
-❒──✜✡ 『 *List Search* 』✵✡──────
+❒──✜✙ 『 *List Search* 』✵❖────
 │✘ ${prefix}gimage
 │✘ ${prefix}google
 │✘ ${prefix}yts
@@ -2459,7 +2449,7 @@ case 'menu': {
 │✘ ${prefix}wallpaper
 ❒───────✤✵
 
-❒──✜✡ 『 *Tools* 』✵✡──────
+❒──✜❖ 『 *Tools* 』✵❖────
 │✘ ${prefix}sticker
 │✘ ${prefix}toimage
 │✘ ${prefix}emojimix 😁+😭
@@ -2473,7 +2463,7 @@ case 'menu': {
 │✘ ${prefix}removebg
 ❒───────✤✵
 
-❒──✜✡ 『 *Owner Menu* 』✵✡──────
+❒──✜✥ 『 *Owner Menu* 』✵❖────
 │✘ ${prefix}chat [option]
 │✘ ${prefix}join [link]
 │✘ ${prefix}setbotpp
@@ -2503,7 +2493,7 @@ case 'menu': {
   let templateMessage = {
   document: global.lol,
   fileName: global.fake,
-  mimetype: 'application/zip',
+  mimetype: 'image/jpg',
   fileLength: 1245567891008252826281638637,
   jpegThumbnail: global.lol,
   caption: `${anu}`,
