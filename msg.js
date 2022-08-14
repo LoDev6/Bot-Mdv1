@@ -2473,6 +2473,7 @@ case 'menu': {
                                     id: 'ping'
                             	}
                             }]
+                            let link = `https://m.youtube.com/watch?v=-OCphNwJEc0`
   let templateMessage = {
   document:fs.readFileSync('./lib/lmao.docx'),
   fileName: global.fake,
@@ -2488,8 +2489,8 @@ case 'menu': {
   body: `I am DailyDev`,
   mediaType:2,
   thumbnail: global.lol,
-  sourceUrl: lmao,
-  mediaUrl: lmao,
+  sourceUrl: link,
+  mediaUrl: link,
   }}}
                             	Zaki.sendMessage(m.chat, templateMessage)
 }

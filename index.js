@@ -67,7 +67,6 @@ async function startZaki() {
 //👍😁👍
 let doku = [f1,f2,f3,f4,f5,f6]
 let lol = pickRandom(doku)
-let lmao = `https://m.youtube.com/watch?v=-OCphNwJEc0`
 //Hebat😁
 //═══════[get group dp]════════\\
                 try {
