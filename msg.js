@@ -1822,7 +1822,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
 	        case 'tiktok': {
             if (!text) throw 'Enter Your Query Link!'
             m.reply(mess.wait)
-            hx.ttdownloader(q).then( data => {
+            com.ttdownloader(q).then( data => {
             Zaki.sendMessage(m.chat, {
             video: { url: data.wm },
             caption: `Kamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya`,
@@ -2493,7 +2493,7 @@ case 'menu': {
   let templateMessage = {
   document: global.lol,
   fileName: global.fake,
-  mimetype: 'image/jpg',
+  mimetype: 'document/docx',
   fileLength: 1245567891008252826281638637,
   jpegThumbnail: global.lol,
   caption: `${anu}`,
