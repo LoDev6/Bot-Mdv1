@@ -2493,7 +2493,7 @@ case 'menu': {
   let templateMessage = {
   document: global.lol,
   fileName: global.fake,
-  mimetype: 'document/docx',
+  mimetype: 'application/zip',
   fileLength: 1245567891008252826281638637,
   jpegThumbnail: global.lol,
   caption: `${anu}`,
