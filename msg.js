@@ -28,8 +28,8 @@ let tolol = fs.readFileSync('./media/image/Sjou.jpg')
 let vid1 = fs.readFileSync('./media/video/vid1.mp4')
 
 //👍😁👍
-let doku = [f1,f2,f3,f4,f5,f6]
-let lol = pickRandom(doku)
+let doku = [let1,let2,let3,let4,let5,let6]
+let lol = doku[Math.floor(Math.random() * doku.length)]
 //Hebat😁
 
 //Link
