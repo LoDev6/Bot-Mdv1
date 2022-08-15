@@ -64,10 +64,6 @@ async function startZaki() {
                 } catch {
                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
-//👍😁👍
-let doku = [f1,f2,f3,f4,f5,f6]
-let lol = pickRandom(doku)
-//Hebat😁
 //═══════[get group dp]════════\\
                 try {
                     ppgroup = await Zaki.profilePictureUrl(anu.id, 'image')

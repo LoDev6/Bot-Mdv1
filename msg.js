@@ -27,6 +27,14 @@ let tolol = fs.readFileSync('./media/image/Sjou.jpg')
 //Videos
 let vid1 = fs.readFileSync('./media/video/vid1.mp4')
 
+//👍😁👍
+let doku = [f1,f2,f3,f4,f5,f6]
+let lol = pickRandom(doku)
+//Hebat😁
+
+//Link
+let link = `https://youtu.be/_jpKcvcHPpg`
+
 //Database
 const antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -149,6 +157,15 @@ try {
         if (m.message) {
             Zaki.sendReadReceipt(m.chat, m.sender, [m.key.id])
             console.log(chalk.black(chalk.bgWhite('[ CMD ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
+        }
+        
+//Fake Reply Group
+	const reply = (teks) => {
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": ` Join Me Official Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+        }
+        
+        const reply1 = (teks) => {
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": `I Don't Like Lmao`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
         }
 	
 //Levelling Bot
@@ -2464,14 +2481,13 @@ case 'menu': {
                                     id: 'ping'
                             	}
                             }]
-                            let link = `https://m.youtube.com/watch?v=-OCphNwJEc0`
   let templateMessage = {
-  document: fs.readFileSync('./lib/lmao.docx'),
+  document:fs.readFileSync('./lib/lmao.docx'),
   fileName: global.fake,
   mimetype: lol,
   fileLength: 1245567891008252826281638637,
   jpegThumbnail: global.lol,
-  caption: anu,
+  caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: btn,
   }
