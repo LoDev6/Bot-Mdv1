@@ -2490,7 +2490,15 @@ case 'menu': {
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: btn,
-  }
+  headerType: 4,
+contextInfo:{externalAdReply:{
+title: `Never coli😁👍`,
+body: `Calph || 2022`,
+mediaType:2,
+thumbnail: global.lol,
+sourceUrl: link,
+mediaUrl: link,
+  }}}
                             	Zaki.sendMessage(m.chat, templateMessage)
 }
 break  
