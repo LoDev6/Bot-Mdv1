@@ -2559,8 +2559,8 @@ case 'menu': {
   jpegThumbnail: global.lol,
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
-  headerType: 1,
   templateButtons: btn,
+  //headerType: 1,
   contextInfo:{externalAdReply:{
   title: `Never coli😁👍`,
   body: `Calph || 2022`,
@@ -2571,7 +2571,7 @@ case 'menu': {
   }
   }
   }
-                            	Zaki.relayMessage(m.chat, templateMessage)
+                            	Zaki.sendMessage(m.chat, templateMessage)
 }
 break  
             default:
