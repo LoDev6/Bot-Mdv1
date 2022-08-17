@@ -32,6 +32,9 @@ let doku = [let1,let2,let3,let4,let5,let6]
 let lol = doku[Math.floor(Math.random() * doku.length)]
 //Hebat😁
 
+//React 
+global.reactemoji = '✅'
+
 //Link
 let link = `https://youtu.be/_jpKcvcHPpg`
 
@@ -161,11 +164,11 @@ try {
         
 //Fake Reply Group
 	const reply = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": ` Join Me Official Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join Me Official Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
         }
         
         const reply1 = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": `I Don't Like Lmao`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `I Don't Like Lmao`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
         }
 	
 //Levelling Bot
@@ -212,6 +215,14 @@ const levelRole = getLevelingLevel(m.sender)
         } else if (levelRole >= 100) {
             role = 'Immortal'
         } 
+        
+//React
+const reactionMessage = {
+                react: {
+                    text: args[0],
+                    key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                }
+            }
 	
 //Detected Link Group
 	if (isAntiLink) 
@@ -917,6 +928,17 @@ let ingfo = `*G R O U P  I N F O*\n\n*Name :* ${groupName}\n*ID Group :* ${m.cha
 ds = await getBuffer(pic)
 Zaki.sendMessage(m.chat, { image: ds,caption: ingfo, mentions: [groupMetadata.owner] }, { quoted: m})
 break
+case 'react': {
+                if (!isCreator) throw mess.owner
+                reactionMessage = {
+                    react: {
+                        text: args[0],
+                        key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                    }
+                }
+                Zaki.sendMessage(m.chat, reactionMessage)
+            }
+            break  
             case 'tagall': case 'tag': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
@@ -1625,7 +1647,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('Audio size is too big '+util.format(media))
-                Zaki.sendImage(m.chat, media.thumb, `➣ Title : ${media.title}\n➣ File Size : ${media.filesizeF}\n➣ Url : ${isUrl(text)}\n➣ Ext : MP3\n➣ Resolution : ${args[1] || '320kbps'}`, m)
+                Zaki.sendImage(m.chat, media.thumb, `😁 Title : ${media.title}\n🍜 File Size : ${media.filesizeF}\n😅 Url : ${isUrl(text)}\n📃 Ext : MP3\n📺 Resolution : ${args[1] || '320kbps'}`, m)
                 Zaki.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -1635,7 +1657,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('Video size is too big '+util.format(media))
-                Zaki.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `➣ Title : ${media.title}\n➣ File Size : ${media.filesizeF}\n➣ Url : ${isUrl(text)}\n➣ Ext : MP3\n➣ Resololution : ${args[1] || '360p'}` }, { quoted: m })
+                Zaki.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `📃 Title : ${media.title}\n😁 File Size : ${media.filesizeF}\n🍜 Url : ${isUrl(text)}\n📺 Ext : MP3\n😅 Resololution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -1827,44 +1849,80 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 Zaki.sendText(m.chat, `> *Results :* ${anu.message}`, m)
             }
             break
-	        case 'tiktok': {
-            if (!text) throw 'Enter Your Query Link!'
-            m.reply(mess.wait)
-            hx.ttdownloader(q).then( data => {
-            Zaki.sendMessage(m.chat, {
-            video: { url: data.wm },
-            caption: `Kamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya`,
-            buttons: [{buttonId: `${prefix}ttnowm ${args[0]} ${m.sender}`, buttonText: { displayText: "Tiktok Nowm" }, type: 1 }],
-            footer: "Untuk Mengubah Ke Audio Gunakan Manual #tiktokaudio [link]"
-            }, { quoted: m })
-            })
+	        case 'tiktok': case 'tiktoknowm': {
+                if (!text) throw 'enter Query Link!'
+                replay(mess.wait)
+                anu = await fetchJson(`http://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
+              let message = await prepareWAMessageMedia({ video : { url: anu.result.video.nowm } }, { upload:   Zaki.waUploadToServer })
+               const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            videoMessage: message.videoMessage,
+                            hydratedContentText: `*-------「 TikTok Downloaded 」-------*\n\n> Name : ${text}\n\n*-------------------*`,
+                            hydratedFooterText: `Kamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya!`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'Go To Tiktok!',
+                                    url: `${text}`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'With Watermark',
+                                    id: `tiktokwm ${text}`
+                                    }
+                                },{quickReplyButton: {
+                                    displayText: 'Audio',
+                                    id: `tiktokmp3 ${text}`
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                  Zaki.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
-            case 'ttnowm':
-            if (!text) throw 'Masukkan Query Link!'
-            m.reply(mess.wait)
-            hx.ttdownloader(q).then( data => {
-            Zaki.sendMessage(m.chat, { video: { url: data.nowm }, mimetype: 'video/mp4' }, { quoted: m })
-            })
-	        break
-
-            case 'ttaudio':
-            if (!text) throw 'Masukkan Query Link!'
-            m.reply(mess.wait)
-            hx.ttdownloader(q).then( data => {
-            Zaki.sendMessage(m.chat, { audio: { url: data.nowm }, mimetype: 'audio/mp4' }, { quoted: m })
-            })
-	        break
+            case 'tiktokwm': case 'tiktokwatermark': {
+                if (!text) throw 'Enter Query Link!'
+                reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.watermark },
+                    caption: `*-------「 TikTok Downloaded 」-------*\n\n> Name : ${text}\n\n*-------------------*`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                Zaki.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+            case 'tiktokmp3': case 'tiktokaudio': {
+                if (!text) throw 'Masukkan Query Link!'
+                reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: `*-------「 TikTok Downloaded 」-------*\n\n> Name : ${text}\n\n*-------------------*`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 2
+                }
+                let msg = await Zaki.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Zaki.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+            }
+            break
 case 'googledrive': {
 if (!text) throw '*Enter a Link Query!*'
 if (!isUrl(args[0]) && !args[0].includes('googledrive.com')) throw '*The link you provided is not valid*'
-if (!isInventoryLimit){ addInventoriLimit(m.sender) }
-            if (isLimit < 1) return m.reply(mess.endLimit)
-            kurangLimit(m.sender, 1)
-            m.reply(`*1 limit used*`)
 anu = await fetchJson(`https://xteam.xyz/dl/drive?url=${text}&APIKEY=${setting.riy}`)
 m.reply(`${util.format(anu)}`)
-Zaki.sendMessage(m.chat, {document: await getBuffer(anu.result.server2), mimetype: 'application/zip', fileName: `${anu.result.title}`}, {quoted:m}).catch ((err) => m.reply('*Failed to download File*'))     
+Zaki.sendMessage(m.chat, {document: await getBuffer(anu.result.server2), mimetype: 'application/zip', fileName: `${anu.result.title}`}, {quoted:m})
 }
 break
 case 'mediafire': 
@@ -2485,21 +2543,22 @@ case 'menu': {
   document:fs.readFileSync('./lib/lmao.docx'),
   fileName: global.fake,
   mimetype: lol,
-  fileLength: 1245567891008252826281638637,
+  fileLength: 99999999999999999,
   jpegThumbnail: global.lol,
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: btn,
-  headerType: 4,
-contextInfo:{externalAdReply:{
-title: `Never coli😁👍`,
-body: `Calph || 2022`,
-mediaType:2,
-thumbnail: global.lol,
-sourceUrl: link,
-mediaUrl: link,
-  }}}
-                            	Zaki.sendMessage(m.chat, templateMessage)
+  contextInfo:{externalAdReply:{
+  title: `Never coli😁👍`,
+  body: `Calph || 2022`,
+  mediaType:2,
+  thumbnail: global.lol,
+  sourceUrl: link,
+  mediaUrl: link,
+  }
+  }
+  }
+                            	Zaki.sendMessage(m.chat, templateMessage, { react: { text: `${global.reactemoji}`, key: m.key }})
 }
 break  
             default:
