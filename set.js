@@ -13,9 +13,9 @@ global.ownerNumber = '16079226124'
 global.gud = 'Elaina Bot' 
 global.ownee = 'you shit'
 global.ownername = 'ElainaDev'
-global.owner = ['79303894386'] 
-global.pemilik = ['79303894386'] 
-global.premium = ['79303894386'] 
+global.owner = ['16079226124'] 
+global.pemilik = ['16079226124'] 
+global.premium = ['16079226124'] 
 global.packname = 'where i am'
 global.slebew = 'Elaina Bot'
 global.fake = 'Elaina bot || ❤️ Multi Device'
@@ -30,7 +30,7 @@ global.sessionName = 'Session'
 global.prefa = ['#','!','/','']
 global.sp = '' 
 global.mess = {
-    success: 'Done ~',
+    success: 'Done.',
     admin: 'Fitur Khusus Admin Group!',
     botAdmin: 'Bot Harus Menjadi Admin Terlebih Dahulu!',
     owner: 'Fitur Khusus Owner Bot',

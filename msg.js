@@ -33,7 +33,7 @@ let lol = doku[Math.floor(Math.random() * doku.length)]
 //Hebat😁
 
 //React 
-global.reactemoji = '✅'
+global.react = '✅'
 
 //Link
 let link = `https://youtu.be/_jpKcvcHPpg`
@@ -2400,6 +2400,16 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
+case 'sendbuffer':{
+try{
+ await m.reply('Tunggu sebentar...')
+sendFile(m.chat, isUrl(q)[0], mess.done)
+} catch (err){
+ m.reply(err)
+console.log(err)
+}
+}
+break
 case 'menu': {
 	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
@@ -2433,6 +2443,7 @@ case 'menu': {
                      }
                      break
            case 'allmenu': case 'listmenu': case 'help': case '?': {
+           	Zaki.sendMessage(m.chat, { react: { text: `${global.react}`, key: m.key }})
                 anu = `📚 *List Menu*
 
 ╔═══❒ 📚 *INFO*
@@ -2440,8 +2451,9 @@ case 'menu': {
 ╟> 📃Script Using : Multi Device ( Beta ) Whatsapp
 ╟> 🏜️Today : ${ucapanWaktu}
 ╟> 🤴Creator : PfftDev 
-╟> 🧐BotName : ${gud}
+╟> 😁BotName : ${gud}
 ╟> ⏱️Time : ${time2}
+╟> 🌟Role : ${role}
 ╚══════
 
 ╔═══❒ 💫 *Info User*
@@ -2547,18 +2559,19 @@ case 'menu': {
   jpegThumbnail: global.lol,
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
+  headerType: 1,
   templateButtons: btn,
   contextInfo:{externalAdReply:{
   title: `Never coli😁👍`,
   body: `Calph || 2022`,
   mediaType:2,
-  thumbnail: global.lol,
+  thumbnail:fs.readFileSync('./media/image/jpg.jpg'),
   sourceUrl: link,
   mediaUrl: link,
   }
   }
   }
-                            	Zaki.sendMessage(m.chat, { react: { text: `${global.reactemoji}`, key: m.key, templateMessage}})
+                            	Zaki.relayMessage(m.chat, templateMessage)
 }
 break  
             default:
