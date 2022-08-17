@@ -2558,7 +2558,7 @@ case 'menu': {
   }
   }
   }
-                            	Zaki.sendMessage(m.chat, { react: { text: `${global.reactemoji}`, templateMessage, key: m.key }})
+                            	Zaki.sendMessage(m.chat, { react: { text: `${global.reactemoji}`, key: m.key, templateMessage}})
 }
 break  
             default:
