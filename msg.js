@@ -1851,7 +1851,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
             break
 	        case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'enter Query Link!'
-                replay(mess.wait)
+                reply(mess.wait)
                 anu = await fetchJson(`http://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
               let message = await prepareWAMessageMedia({ video : { url: anu.result.video.nowm } }, { upload:   Zaki.waUploadToServer })
                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -2558,7 +2558,7 @@ case 'menu': {
   }
   }
   }
-                            	Zaki.sendMessage(m.chat, templateMessage, { react: { text: `${global.reactemoji}`, key: m.key }})
+                            	Zaki.sendMessage(m.chat, { react: { text: `${global.reactemoji}`, templateMessage, key: m.key }})
 }
 break  
             default:
