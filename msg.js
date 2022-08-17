@@ -2551,11 +2551,6 @@ case 'menu': {
 │✘ ${prefix}bc
 ❒───────✤✵`
                 let button = [{
-     	urlButton: {
-                       displayText: '📃Source and Website',
-                       url: 'https://github.com/DikaArdnt/Hisoka-Morou'
-                                }
-                            }, {
                             	quickReplyButton: {
                                     displayText: '😁owner',
                                     id: 'owner'
