@@ -1,4 +1,3 @@
-
 require('./set')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
@@ -123,6 +122,31 @@ var ucapanWaktu = 'Goof Morning 🌅'
 if(time2 < "05:00:00"){
 var ucapanWaktu = 'Good Night 🌃'
                                          }
+ //Fake videos
+ const fvideo = {
+key: { 
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? 
+{ remoteJid: "234817039714-19122002346@g.us" } : {}) 
+},
+message: { 
+"videoMessage": { 
+"title":"Pov : You Has been Added",
+"h": `Hah?`,
+'seconds': '30', 
+'caption': 'Alo',
+'jpegThumbnail': log0
+}
+}
+}
+//Fake Reply Group
+	const reply = (teks) => {
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `Join Me Official Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+        }
+        
+        const reply1 = (teks) => {
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `I Don't Like Lmao`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+        }
 try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
             let limitUser = isPremium ? global.limitawal.premium : global.limitawal.free
@@ -160,15 +184,6 @@ try {
         if (m.message) {
             Zaki.sendReadReceipt(m.chat, m.sender, [m.key.id])
             console.log(chalk.black(chalk.bgWhite('[ CMD ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
-        }
-        
-//Fake Reply Group
-	const reply = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join Me Official Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
-        }
-        
-        const reply1 = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `I Don't Like Lmao`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
         }
 	
 //Levelling Bot
@@ -2443,7 +2458,6 @@ case 'menu': {
                      }
                      break
            case 'allmenu': case 'listmenu': case 'help': case '?': {
-           	Zaki.sendMessage(m.chat, { react: { text: `${global.react}`, key: m.key }})
                 anu = `📚 *List Menu*
 
 ╔═══❒ 📚 *INFO*
@@ -2535,7 +2549,7 @@ case 'menu': {
 │✘ ${prefix}bcgroup
 │✘ ${prefix}bc
 ❒───────✤✵`
-                let btn = [{
+                let button = [{
      	urlButton: {
                        displayText: '📃Source and Website',
                        url: 'https://github.com/DikaArdnt/Hisoka-Morou'
@@ -2559,19 +2573,19 @@ case 'menu': {
   jpegThumbnail: global.lol,
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
-  templateButtons: btn,
-  //headerType: 1,
+  templateButtons: button,
+  headerType: 4,
   contextInfo:{externalAdReply:{
-  title: `Never coli😁👍`,
-  body: `Calph || 2022`,
-  mediaType:2,
-  thumbnail:fs.readFileSync('./media/image/jpg.jpg'),
-  sourceUrl: link,
+  title:"Hi Bro How are you?",
+  body:"JustFuxk",
+  thumbnail: log0,
+  mediaType:1,
   mediaUrl: link,
+  sourceUrl: link
   }
   }
   }
-                            	Zaki.sendMessage(m.chat, templateMessage)
+                            	Zaki.sendMessage(m.chat, templateMessage, {quoted:m})
 }
 break  
             default:
