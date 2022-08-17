@@ -17,6 +17,7 @@ global.owner = ['16079226124']
 global.pemilik = ['16079226124'] 
 global.premium = ['16079226124'] 
 global.packname = 'where i am'
+global.pengguna = 'Lmao'
 global.slebew = 'Elaina Bot'
 global.fake = 'Elaina bot || ❤️ Multi Device'
 global.author = 'Anj' 
@@ -53,6 +54,7 @@ global.limitawal = {
 global.thumb = fs.readFileSync('./media/image/Elaina.jpg')
 global.fakeImg = fs.readFileSync('./media/image/Bruh.jpg')
 global.lol = fs.readFileSync('./media/image/let.jpg')
+global.log0 = fs.readFileSync("./media/image/jpg.jpg")
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
