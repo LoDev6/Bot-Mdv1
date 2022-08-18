@@ -142,11 +142,11 @@ message: {
 }
 //Fake Reply Group
 	const reply = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `Join Me Official Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join My Gc Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/jpg.jpg`),"sourceUrl": "https://chat.whatsapp.com/J5p5d2l8VnaAhAwBa9EmxD"}}}, { quoted: m})
         }
         
         const reply1 = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `I Don't Like Lmao`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": "https://m.youtube.com/channel/UCHdipvk52k43KsPRenGpD0w"}}}, { quoted: m})
+            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join My Gc Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/jpg.jpg`),"sourceUrl": "https://chat.whatsapp.com/J5p5d2l8VnaAhAwBa9EmxD"}}}, { quoted: m})
         }
 try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -834,7 +834,7 @@ case 'linkgroup': case 'grouplink': case 'gclink': case 'linkgc': {
 Ciee Whats Going On💖👀`
             let menst = [orang, jodoh]
             let buttons = [
-                        { buttonId: 'Congrats', buttonText: { displayText: '' }, type: 1 }
+                        { buttonId: '❤️congrats', buttonText: { displayText: '❤️congrats' }, type: 1 }
                     ]
                     await Zaki.sendButtonText(m.chat, buttons, jawab, Zaki.user.name, m, {mentions: menst})
             }
@@ -2561,7 +2561,7 @@ case 'menu': {
                                     id: 'ping'
                             	}
                             }]
-  let templateMessage = {
+  let buttonMessage = {
   document:fs.readFileSync('./lib/lmao.docx'),
   fileName: global.fake,
   mimetype: lol,
@@ -2570,11 +2570,18 @@ case 'menu': {
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: button,
+  headerType: 4,
+  contextInfo:{externalAdReply:{
+  title: `lmaouser-fuckhdevv`,
+  body: `I want recode Script?`,
+  mediaType:2,
+  thumbnail: zaki,
+  sourceUrl: link,
+  mediaUrl: link,
+  }}
   }
-  }
-  }
-                            	Zaki.sendMessage(m.chat, templateMessage, {quoted:m})
-}
+                            	Zaki.sendMessage(m.chat, buttonMessage)
+   }                         
 break  
             default:
                 if (budy.startsWith('=>')) {
