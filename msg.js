@@ -2573,7 +2573,7 @@ case 'menu': {
   }
   }
   }
-                            	Zaki.sendMessage(m.chat, templateMessage, {quoted:reply1})
+                            	Zaki.sendMessage(m.chat, templateMessage, {quoted:fvideo})
 }
 break  
             default:
