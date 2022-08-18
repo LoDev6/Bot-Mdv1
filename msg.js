@@ -2570,18 +2570,10 @@ case 'menu': {
   caption: `${anu}`,
   footer: 'Elaina bot || 2022 ❤️',
   templateButtons: button,
-  headerType: 4,
-  contextInfo:{externalAdReply:{
-  title:"Hi Bro How are you?",
-  body:"JustFuxk",
-  thumbnail: log0,
-  mediaType:1,
-  mediaUrl: link,
-  sourceUrl: link
   }
   }
   }
-                            	Zaki.sendMessage(m.chat, templateMessage, {quoted:m})
+                            	Zaki.sendMessage(m.chat, templateMessage, {quoted:reply1})
 }
 break  
             default:
