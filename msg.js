@@ -31,6 +31,9 @@ let doku = [let1,let2,let3,let4,let5,let6]
 let lol = doku[Math.floor(Math.random() * doku.length)]
 //Hebat😁
 
+//Hebat
+let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999,status: 200, thumbnail: zaki, surface: 200, message: `Hi 😁 ${pushname} How are you?`, orderTitle: 'Lmao', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":9999,"isForwarded":true},sendEphemeral: true}
+
 //React 
 global.react = '✅'
 
@@ -2580,7 +2583,7 @@ case 'menu': {
   mediaUrl: link,
   }}
   }
-                            	Zaki.sendMessage(m.chat, buttonMessage)
+                            	Zaki.sendMessage(m.chat, buttonMessage, {quoted:fgclink})
    }                         
 break  
             default:
