@@ -31,9 +31,6 @@ let doku = [let1,let2,let3,let4,let5,let6]
 let lol = doku[Math.floor(Math.random() * doku.length)]
 //Hebat😁
 
-//Hebat
-let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999,status: 200, thumbnail: zaki, surface: 200, message: `Hi 😁 ${pushname} How are you?`, orderTitle: 'Lmao', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":9999,"isForwarded":true},sendEphemeral: true}
-
 //React 
 global.react = '✅'
 
@@ -106,6 +103,21 @@ var sDisplay = s > 0 ? s + (s == 1 ? " second" : " Second") : "";
 return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 
+//downloader
+const sendFile = async(link, type, options) => {
+hasil = await getBuffer(link)
+Zaki.sendMessage(from, hasil, type, options).catch(e => {
+fetch(link).then((hasil) => {
+Zaki.sendMessage(from, hasil, type, options).catch(e => {
+Zaki.sendMessage(from, { url : link }, type, options).catch(e => {
+m.reply('ERROR [ ! ]')
+console.log(e)
+})
+})
+})
+})
+}
+
       //ucapan Waktu ( FuxkDev )
 const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
@@ -145,12 +157,12 @@ message: {
 }
 //Fake Reply Group
 	const reply = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join My Gc Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/jpg.jpg`),"sourceUrl": "https://chat.whatsapp.com/J5p5d2l8VnaAhAwBa9EmxD"}}}, { quoted: m})
-        }
-        
-        const reply1 = (teks) => {
-            Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join My Gc Group`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/jpg.jpg`),"sourceUrl": "https://chat.whatsapp.com/J5p5d2l8VnaAhAwBa9EmxD"}}}, { quoted: m})
-        }
+    Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join Group Bot Invite Here`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": `${global.lengt2}`}}}, { quoted: m})
+}
+
+const replay = (teks) => {
+    Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": `Join My Group Whatsapp 2`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": `${global.lengt1}`}}}, { quoted: m})
+}
 try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
             let limitUser = isPremium ? global.limitawal.premium : global.limitawal.free
@@ -861,7 +873,7 @@ Ciee Whats Going On💖👀`
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Zaki.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await Zaki.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
@@ -869,7 +881,7 @@ Ciee Whats Going On💖👀`
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Zaki.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await Zaki.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
@@ -877,7 +889,7 @@ Ciee Whats Going On💖👀`
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Zaki.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await Zaki.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
@@ -885,7 +897,7 @@ Ciee Whats Going On💖👀`
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Zaki.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await Zaki.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'block': {
@@ -1707,7 +1719,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
             }
             break
             case 'pinterest': {
-                reply(mess.wait)
+                replay(mess.wait)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -1715,7 +1727,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
             }
             break
 	    case 'couplepp': case 'ppcouple': {
-                reply(mess.wait)
+                replay(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 Zaki.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: m })
@@ -1920,7 +1932,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
             break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
-                reply(mess.wait)
+                replay(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
@@ -2316,13 +2328,13 @@ case 'sendkontak': case 'sendcontact': {
             case 'public': {
                 if (!isCreator) throw mess.owner
                 Zaki.public = true
-                reply('Successfully Changed To Public Usage')
+                replay('Successfully Changed To Public Usage')
             }
             break
             case 'self': {
                 if (!isCreator) throw mess.owner
                 Zaki.public = false
-                reply('Successfully Changed To Self Usage')
+                replay('Successfully Changed To Self Usage')
             }
             break
             case 'ping': case 'botstatus': case 'statusbot': {
@@ -2462,6 +2474,7 @@ case 'menu': {
                      }
                      break
            case 'allmenu': case 'listmenu': case 'help': case '?': {
+           	Zaki.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 anu = `📚 *List Menu*
 
 ╔═══❒ 📚 *INFO*
@@ -2564,26 +2577,7 @@ case 'menu': {
                                     id: 'ping'
                             	}
                             }]
-  let buttonMessage = {
-  document:fs.readFileSync('./lib/lmao.docx'),
-  fileName: global.fake,
-  mimetype: lol,
-  fileLength: 99999999999999999,
-  jpegThumbnail: global.lol,
-  caption: `${anu}`,
-  footer: 'Elaina bot || 2022 ❤️',
-  templateButtons: button,
-  headerType: 4,
-  contextInfo:{externalAdReply:{
-  title: `lmaouser-fuckhdevv`,
-  body: `I want recode Script?`,
-  mediaType:2,
-  thumbnail: zaki,
-  sourceUrl: link,
-  mediaUrl: link,
-  }}
-  }
-                            	Zaki.sendMessage(m.chat, buttonMessage, {quoted:fgclink})
+                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: 'Elaina bot || 2022 ❤️',templateButtons: button,contextInfo:{externalAdReply:{title: 'Elaina Bot || @2022',body: `${global.gud}`,previewType: "PHOTO",thumbnailUrl: ``,thumbnail: fs.readFileSync('./media/image/lol.jpg'),sourceUrl: `${global.lengt2}`}}}, {quoted:m})
    }                         
 break  
             default:
