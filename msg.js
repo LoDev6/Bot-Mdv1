@@ -33,7 +33,11 @@ let lol = doku[Math.floor(Math.random() * doku.length)]
 
 //React 
 global.react = '✅'
-global.reactemoji = '🥰'
+global.react1 = '🥰'
+global.react2 = '🗿'
+global.react3 = '😳'
+global.react4 = '😅'
+global.react5 = '😁'
 
 //Link
 let link = `https://youtu.be/_jpKcvcHPpg`
@@ -2444,8 +2448,24 @@ console.log(err)
 break
 
 //React 
-case 'halo' : case 'bang' : case 'banh' : case 'iya' :{
-	Zaki.sendMessage(m.chat, { react: { text: `${global.reactemoji}`, key: m.key }})
+case 'halo' : {
+	Zaki.sendMessage(m.chat, { react: { text: `${global.react1}`, key: m.key }})
+	}
+break
+case 'bang' : {
+	Zaki.sendMessage(m.chat, { react: { text: `${global.react2}`, key: m.key }})
+	}
+break
+case 'banh' : {
+	Zaki.sendMessage(m.chat, { react: { text: `${global.react3}`, key: m.key }})
+	}
+break
+case 'iya' : {
+	Zaki.sendMessage(m.chat, { react: { text: `${global.react4}`, key: m.key }})
+	}
+break
+case 'sayang' : {
+	Zaki.sendMessage(m.chat, { react: { text: `${global.react5}`, key: m.key }})
 	}
 break
 
