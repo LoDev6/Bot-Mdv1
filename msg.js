@@ -2524,17 +2524,17 @@ case 'menu': {
 
 ❒──✜✤ 『 *List Group* 』✵✮────
 │✘ ${prefix}grouplink
-│✘  ${prefix}ephemeral [option]
-│✘  ${prefix}setgrouppp
-│✘  ${prefix}setname [text]
-│✘  ${prefix}group [option]
-│✘  ${prefix}editinfo [option]
-│✘  ${prefix}grupinfo
-│✘  ${prefix}add @user
-│✘  ${prefix}kick @user
-│✘  ${prefix}afk
-│✘  ${prefix}promote @user
-│✘  ${prefix}demote @user
+│✘ ${prefix}ephemeral [option]
+│✘ ${prefix}setgrouppp
+│✘ ${prefix}setname [text]
+│✘ ${prefix}group [option]
+│✘ ${prefix}editinfo [option]
+│✘ ${prefix}grupinfo
+│✘ ${prefix}add @user
+│✘ ${prefix}kick @user
+│✘ ${prefix}afk
+│✘ ${prefix}promote @user
+│✘ ${prefix}demote @user
 ❒───────✤✵
 
 ❒──✜✬『 *List Downloaded* 』✵✧────
