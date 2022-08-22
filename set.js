@@ -32,6 +32,16 @@ global.let6 = 'application/vnd.android.package-archive'
 global.sessionName = 'Session'
 global.prefa = ['#','!','/','']
 global.sp = '' 
+
+//React emoji
+global.react1 = '🗿'
+global.react2 = '😅'
+global.react3 = '🐥'
+global.react4 = '😁'
+global.react5 = '🥰'
+global.react6 = '😱'
+
+//nyimak
 global.mess = {
     success: 'Done.',
     admin: 'Fitur Khusus Admin Group!',
