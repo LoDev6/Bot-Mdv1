@@ -2474,7 +2474,7 @@ case 'menu': {
                      }
                      break
            case 'allmenu': case 'listmenu': case 'help': case '?': {
-           	Zaki.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+           	Zaki.sendMessage(m.chat, { react: { text: `${global.react}`, key: m.key }})
                 anu = `📚 *List Menu*
 
 ╔═══❒ 📚 *INFO*
