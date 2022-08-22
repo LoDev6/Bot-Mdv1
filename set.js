@@ -11,7 +11,7 @@ global.Prefix = 'Multi'
 global.meki = '16079226124'
 global.ownerNumber = '16079226124'
 global.gud = 'Elaina Bot' 
-global.ownee = 'you shit'
+global.ownee = 'Elaina'
 global.ownername = 'ElainaDev'
 global.owner = ['16079226124'] 
 global.pemilik = ['16079226124'] 
@@ -21,6 +21,8 @@ global.pengguna = 'Lmao'
 global.slebew = 'Elaina Bot'
 global.fake = 'Elaina bot || ❤️ Multi Device'
 global.author = 'Anj' 
+global.lengt2 = 'https://chat.whatsapp.com/Kpef9EotbMD4M5Fb9g7FEP'
+global.lengt1 = 'https://youtu.be/DanishKimasu'
 global.let1 = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
 global.let2 = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 global.let3 = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
@@ -52,7 +54,7 @@ global.limitawal = {
 }
 
 global.thumb = fs.readFileSync('./media/image/Elaina.jpg')
-global.fakeImg = fs.readFileSync('./media/image/Bruh.jpg')
+global.fakeImg = fs.readFileSync('./media/image/jpg.jpg')
 global.lol = fs.readFileSync('./media/image/let.jpg')
 global.log0 = fs.readFileSync("./media/image/jpg.jpg")
 
