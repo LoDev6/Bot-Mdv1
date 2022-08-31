@@ -38,6 +38,7 @@ global.react2 = '🗿'
 global.react3 = '😳'
 global.react4 = '😅'
 global.react5 = '😁'
+global.react6 = '🤓'
 
 //Link
 let link = `https://youtu.be/_jpKcvcHPpg`
@@ -126,22 +127,22 @@ console.log(e)
       //ucapan Waktu ( FuxkDev )
 const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
-var ucapanWaktu = 'Good Morning 🌅'
+var ucapanWaktu = 'good night 🌌'
                                         }
 if(time2 < "19:00:00"){
-var ucapanWaktu = 'Good Afternoon 🌆'
+var ucapanWaktu = 'good atfernoon 🌆'
                                          }
 if(time2 < "18:00:00"){
-var ucapanWaktu = 'Good Afternoon 🌆'
+var ucapanWaktu = 'good atfernoon 🌆'
                                          }
 if(time2 < "15:00:00"){
-var ucapanWaktu = 'Good Day ☀️'
+var ucapanWaktu = 'good day 🏖️'
                                          }
 if(time2 < "11:00:00"){
-var ucapanWaktu = 'Goof Morning 🌅'
+var ucapanWaktu = 'good morning 🌅'
                                          }
 if(time2 < "05:00:00"){
-var ucapanWaktu = 'Good Night 🌃'
+var ucapanWaktu = 'good night 🌌'
                                          }
  //Fake videos
  const fvideo = {
@@ -2177,6 +2178,12 @@ case 'howsange':
 Zaki.sendMessage(m.chat, { text: `you : ${q}\nJawaban : *${sange}%*` }, { quoted: m })
 					break
 case 'cekpasangan':
+ if (!text) throw `Example : ${prefix + command} You`
+ 		const cek = ['9', '20', '12', '70', '56', '40', '50', '60', '69', '78', '76', '87', '89', '84', '32', '81', '18', '90', '96', '99', '100']
+ 		const pasang = cek[Math.floor(Math.random()* cek.length)]
+ Zaki.sendMessage(m.chat, { text: `you : ${q}\nJawaban : *${pasang}%*` }, { quoted: m })
+					break
+case 'cekpasangan':
 				if (!q) throw (`Penggunaan ${command} Nama1|nama2\n\nContoh : ${command} Rehan|Rizki`)
 					get_args = args.join(" ").split("|")
 				jeremy = get_args[0]
@@ -2466,6 +2473,10 @@ case 'iya' : {
 break
 case 'sayang' : {
 	Zaki.sendMessage(m.chat, { react: { text: `${global.react5}`, key: m.key }})
+	}
+break
+case 'bruh' : {
+	Zaki.sendMessage(m.chat, { react: { text: `${global.react6}`, key: m.key }})
 	}
 break
 
