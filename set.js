@@ -8,14 +8,14 @@ global.APIKeys = {
 	'https://zenzapi.xyz': '805a6c3fa9', //Apikey Premium
 }
 global.Prefix = 'Multi'
-global.meki = '16079226124'
-global.ownerNumber = '16079226124'
+global.meki = '37128121301'
+global.ownerNumber = '37128121301'
 global.gud = 'Elaina Bot' 
 global.ownee = 'Elaina'
 global.ownername = 'ElainaDev'
-global.owner = ['16079226124'] 
-global.pemilik = ['16079226124'] 
-global.premium = ['16079226124'] 
+global.owner = ['37128121301'] 
+global.pemilik = ['37128121301'] 
+global.premium = ['37128121301'] 
 global.packname = 'where i am'
 global.pengguna = 'Lmao'
 global.slebew = 'Elaina Bot'
