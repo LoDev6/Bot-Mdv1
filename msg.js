@@ -39,6 +39,7 @@ global.react3 = '😳'
 global.react4 = '😅'
 global.react5 = '😁'
 global.react6 = '🤓'
+global.react7 = '☺️'
 
 //Link
 let link = `https://youtu.be/_jpKcvcHPpg`
@@ -144,23 +145,6 @@ var ucapanWaktu = 'good morning 🌅'
 if(time2 < "05:00:00"){
 var ucapanWaktu = 'good night 🌌'
                                          }
- //Fake videos
- const fvideo = {
-key: { 
-fromMe: false,
-participant: `0@s.whatsapp.net`, ...( from ?
-{ remoteJid: "234817039714-19122002346@g.us" } : {}) 
-},
-message: { 
-"videoMessage": { 
-"title":"Pov : You Has been Added",
-"h": `Hah?`,
-'seconds': '30', 
-'caption': 'Alo',
-'jpegThumbnail': log0
-}
-}
-}
 //Fake Reply Group
 	const reply = (teks) => {
     Zaki.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.gud}`,"body": ` Join Group Bot Invite Here`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/image/lol.jpg`),"sourceUrl": `${global.lengt2}`}}}, { quoted: m})
@@ -2150,7 +2134,7 @@ Zaki.sendMessage(m.chat, { text: `Rate : ${q}\nJawaban : *${te}%*` }, { quoted: 
 					break
 case 'kapan':
 				if (!text) throw `Example : ${prefix + command} Gwehj mati??`
-					const kapan = ['30 detik','12 detik','0 detik','12 menit','30 menit','5 Hari Lagi', '10 Hari Lagi', '15 Hari Lagi','20 Hari Lagi', '25 Hari Lagi','30 Hari Lagi','35 Hari Lagi','40 Hari Lagi','45 Hari Lagi','50 Hari Lagi','55 Hari Lagi','60 Hari Lagi','65 Hari Lagi','70 Hari Lagi','75 Hari Lagi','80 Hari Lagi','85 Hari Lagi','90 Hari Lagi','100 Hari Lagi','5 Bulan Lagi', '10 Bulan Lagi', '15 Bulan Lagi','20 Bulan Lagi', '25 Bulan Lagi','30 Bulan Lagi','35 Bulan Lagi','40 Bulan Lagi','45 Bulan Lagi','50 Bulan Lagi','55 Bulan Lagi','60 Bulan Lagi','65 Bulan Lagi','70 Bulan Lagi','75 Bulan Lagi','80 Bulan Lagi','85 Bulan Lagi','90 Bulan Lagi','100 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','Besok','1 Jam',`Abis Command Ini Juga Lu ${q}`]
+					const kapan = ['30 detik','12 detik','0 detik','12 menit','30 menit','5 Hari Lagi', '10 Hari Lagi', '15 Hari Lagi','20 Hari Lagi', '25 Hari Lagi','30 Hari Lagi','35 Hari Lagi','40 Hari Lagi','45 Hari Lagi','50 Hari Lagi','55 Hari Lagi','60 Hari Lagi','65 Hari Lagi','70 Hari Lagi','75 Hari Lagi','80 Hari Lagi','85 Hari Lagi','90 Hari Lagi','100 Hari Lagi','5 Bulan Lagi', '10 Bulan Lagi', '15 Bulan Lagi','20 Bulan Lagi', '25 Bulan Lagi','30 Bulan Lagi','35 Bulan Lagi','40 Bulan Lagi','45 Bulan Lagi','50 Bulan Lagi','55 Bulan Lagi','60 Bulan Lagi','65 Bulan Lagi','70 Bulan Lagi','75 Bulan Lagi','80 Bulan Lagi','85 Bulan Lagi','90 Bulan Lagi','100 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','Besok','1 jam',`Abis Command Ini Juga Lu ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
 Zaki.sendMessage(m.chat, { text: `Pertanyaan : ${q}\nJawaban : *${kapankah}*` }, { quoted: m })
 					break
@@ -2479,6 +2463,17 @@ case 'bruh' : {
 	Zaki.sendMessage(m.chat, { react: { text: `${global.react6}`, key: m.key }})
 	}
 break
+//Chat auto men😋
+case 'makasi' : {
+	reply('makasi sama ayang gwehj aja')
+	}
+break
+case 'bot' :{
+ Zaki.sendMessage(m.chat, { react: { text: `${global.react7}`, key: m.chat}})
+  reply('apa sayang😁😁')
+  }
+break
+
 
 // Case menu
 
@@ -2516,7 +2511,9 @@ case 'menu': {
                      break
            case 'allmenu': case 'listmenu': case 'help': case '?': {
            	Zaki.sendMessage(m.chat, { react: { text: `${global.react}`, key: m.key }})
-                anu = `📚 *List Menu*
+                anu = `*-------「 List Menu 」-------*
+
+
 
 ╔═══❒ 📚 *INFO*
 ╟> 🍁Name Owner : ${ownername}
