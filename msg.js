@@ -2480,6 +2480,7 @@ break
 case 'menu': {
 	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
+                	urlButton: {
                                 displayText: 'Calling Me🌿',
                                     url: 'https://wa.me/16079226124'
                                 }
