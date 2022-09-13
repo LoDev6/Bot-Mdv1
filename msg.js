@@ -2480,18 +2480,17 @@ break
 case 'menu': {
 	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
-                                urlButton: {
-                                    displayText: 'Go To Owner !',
+                                displayText: 'Calling Me🌿',
                                     url: 'https://wa.me/16079226124'
                                 }
                             }, {
                             	urlButton: {
-                                    displayText: 'Script And Website',
+                                    displayText: 'Script And Website 🍂',
                                     url: 'https://github.com/DikaArdnt/Hisoka-Morou'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Status📉',
+                                    displayText: '🍂Status',
                                     id: 'ping'
                                 }
                             }, {
@@ -2501,7 +2500,7 @@ case 'menu': {
 								}
 							}, {
 								quickReplyButton: {
-                                    displayText: '📚Menu',
+                                    displayText: '🍜Menu',
                                     id: 'allmenu'
                                 }
                             }]
@@ -2513,22 +2512,29 @@ case 'menu': {
            	Zaki.sendMessage(m.chat, { react: { text: `${global.react}`, key: m.key }})
                 anu = `*-------「 List Menu 」-------*
 
+┌─❖
+│「 Konnichiwa 🌸 」
+└┬❖ 「 Hi 👋 ${pushname} 」
+┌┤> _konnichiwa 今日は元気ですか?🥰👋😆_
+│└───────────────┈ ⳹
+│ 「 BOT INFO🌷」
+│> 🍁Name Owner : ${ownername}
+│>  📃Script Using : Multi Device ( Beta ) Whatsapp
+│>  🏜️Today : ${ucapanWaktu}
+│>  🤴Creator : PfftDev 
+│>  😁BotName : ${gud}
+│>  ⏱️Time : ${time2}
+│>  🌟Role : ${role}
+│
+│「 User Name 🌸 」
+│> 💫Name User : ${pushname}
+│> 👨‍💻Prefix : ( ${prefix} )
+│
+└┬──────────────┈ ⳹
+   │✑ _the following are the features in this bot _
+   └───────────────┈ ⳹
 
 
-╔═══❒ 📚 *INFO*
-╟> 🍁Name Owner : ${ownername}
-╟> 📃Script Using : Multi Device ( Beta ) Whatsapp
-╟> 🏜️Today : ${ucapanWaktu}
-╟> 🤴Creator : PfftDev 
-╟> 😁BotName : ${gud}
-╟> ⏱️Time : ${time2}
-╟> 🌟Role : ${role}
-╚══════
-
-╔═══❒ 💫 *Info User*
-╟> 💫Name User : ${pushname}
-╟> 👨‍💻Prefix : ( ${prefix} )
-╚══════
 
 ❒──✜✤ 『 *List Group* 』✵✮────
 │✘ ${prefix}grouplink
@@ -2605,17 +2611,27 @@ case 'menu': {
 │✘ ${prefix}bc
 ❒───────✤✵`
                 let button = [{
+                	urlButton: {
+                                    displayText: 'Calling Me🌿',
+                                    url: 'https://wa.me/16079226124'
+                                }
+                            }, {
+                            	urlButton: {
+                                    displayText: 'Script And Website 🍂',
+                                    url: 'https://github.com/DikaArdnt/Hisoka-Morou'
+                                }
+                            }, {
                             	quickReplyButton: {
-                                    displayText: '😁owner',
+                                    displayText: 'owner🍣',
                                     id: 'owner'
                  				}
                             }, {
                             	quickReplyButton: {
-                                    displayText: '🍜Runtime',
+                                    displayText: 'Runtime🍜',
                                     id: 'ping'
                             	}
                             }]
-                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: 'Elaina bot || 2022 ❤️',templateButtons: button,contextInfo:{externalAdReply:{title: 'Elaina Bot || @2022',body: `${global.gud}`,previewType: "PHOTO",thumbnailUrl: ``,thumbnail: fs.readFileSync('./media/image/lol.jpg'),sourceUrl: `${global.lengt2}`}}}, {quoted:m})
+                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: '@FyppDevoloper____',templateButtons: button,contextInfo:{externalAdReply:{title: '@FypxxDevoloper___',body: `${global.gud}`,previewType: "PHOTO",thumbnailUrl: ``,thumbnail: fs.readFileSync('./media/image/lol.jpg'),sourceUrl: `${global.lengt2}`}}}, {quoted:m})
    }                         
 break  
             default:
