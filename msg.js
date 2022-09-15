@@ -2533,11 +2533,29 @@ case 'menu': {
 │
 └┬──────────────┈ ⳹
    │✑ _the following are the features in this bot _
-   └───────────────┈ ⳹
-
-
-
-❒──✜✤ 『 *List Group* 』✵✮────
+   └───────────────┈ ⳹`
+                let button = [{
+                	urlButton: {
+                                    displayText: 'Calling Me🌿',
+                                    url: 'https://wa.me/16079226124'
+                                }
+                            }, {
+                            	urlButton: {
+                                    displayText: 'Script And Website 🍂',
+                                    url: 'https://github.com/DikaArdnt/Hisoka-Morou'
+                                }
+                            }, {
+                            	quickReplyButton: {
+                                    displayText: 'owner🍣',
+                                    id: 'owner'
+                 				}
+                            }, {
+                            	quickReplyButton: {
+                                    displayText: 'Runtime🍜',
+                                    id: 'ping'
+                            	}
+                            }]
+                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: `❒──✜✤ 『 *List Group* 』✵✮────
 │✘ ${prefix}grouplink
 │✘ ${prefix}ephemeral [option]
 │✘ ${prefix}setgrouppp
@@ -2610,29 +2628,9 @@ case 'menu': {
 │✘ ${prefix}unblock @user
 │✘ ${prefix}bcgroup
 │✘ ${prefix}bc
-❒───────✤✵`
-                let button = [{
-                	urlButton: {
-                                    displayText: 'Calling Me🌿',
-                                    url: 'https://wa.me/16079226124'
-                                }
-                            }, {
-                            	urlButton: {
-                                    displayText: 'Script And Website 🍂',
-                                    url: 'https://github.com/DikaArdnt/Hisoka-Morou'
-                                }
-                            }, {
-                            	quickReplyButton: {
-                                    displayText: 'owner🍣',
-                                    id: 'owner'
-                 				}
-                            }, {
-                            	quickReplyButton: {
-                                    displayText: 'Runtime🍜',
-                                    id: 'ping'
-                            	}
-                            }]
-                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: '@FyppDevoloper____',templateButtons: button}, {quoted:m})
+❒───────✤✵
+
+@FypppDev______`,templateButtons: button}, {quoted:m})
    }                         
 break  
             default:
