@@ -2478,7 +2478,7 @@ break
 // Case menu
 
 case 'menu': {
-	txt = `Hi ! ${pushname}, How are you?😊 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
+	txt = `Hi 👋 ${pushname}, How are you?😄 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
 	let btn = [{
                 	urlButton: {
                                 displayText: 'Calling Me🌿',
@@ -2632,7 +2632,7 @@ case 'menu': {
                                     id: 'ping'
                             	}
                             }]
-                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: '@FyppDevoloper____',templateButtons: button,contextInfo:{externalAdReply:{title: '@FypxxDevoloper___',body: `${global.gud}`,previewType: "PHOTO",thumbnailUrl: ``,thumbnail: fs.readFileSync('./media/image/lol.jpg'),sourceUrl: `${global.lengt2}`}}}, {quoted:m})
+                            	Zaki.sendMessage(m.chat,{document:fs.readFileSync('./lib/lmao.docx'),fileName: global.fake,mimetype: lol,fileLength: 999999999999,jpegThumbnail: global.lol,caption: `${anu}`,footer: '@FyppDevoloper____',templateButtons: button}, {quoted:m})
    }                         
 break  
             default:
