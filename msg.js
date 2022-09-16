@@ -2470,15 +2470,21 @@ case 'makasi' : {
 break
 case 'bot' :{
  Zaki.sendMessage(m.chat, { react: { text: `${global.react7}`, key: m.chat}})
-  reply('apa sayang😁😁')
+  reply('alo juga banh')
   }
 break
-
-
+case 'waduh' : {
+	reply('knp kmu syng?')
+	}
+break
+case 'baik' : {
+	reply('ayang ku baik baik saja kok😁')
+}
+break
 // Case menu
 
 case 'menu': {
-	txt = `Hi 👋 ${pushname}, How are you?😄 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner`
+	txt = `Hi 👋 ${pushname}, How are you?😄 I am ${gud} this is a Whatsapp Multi Device bot, If you find a bug in this bot please type ${prefix}owner if you don't find the button, type ${prefix}help To see it.`
 	let btn = [{
                 	urlButton: {
                                 displayText: 'Calling Me🌿',
@@ -2509,7 +2515,7 @@ case 'menu': {
                         Zaki.send5ButImg(m.chat, txt, "© 2022 || Elaina bot", kahfsj, btn, kahfsj)
                      }
                      break
-           case 'allmenu': case 'listmenu': case 'help': case '?': {
+           case 'allmenu': case 'listmenu': {
            	Zaki.sendMessage(m.chat, { react: { text: `${global.react}`, key: m.key }})
                 anu = `*-------「 List Menu 」-------*
 
@@ -2632,7 +2638,7 @@ case 'menu': {
 
 @FypppDev______`,templateButtons: button}, {quoted:m})
    }                         
-break  
+break 
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
